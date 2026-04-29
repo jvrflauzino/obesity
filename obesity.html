@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Obesity Study Case</title>
+<title>obesity</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,7 +84,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Obesity Study Case</h1>
+<h1 class="title">obesity</h1>
 </div>
 
 
@@ -158,19 +158,20 @@ The following object is masked from 'package:tibble':
 <div class="cell-output cell-output-stderr">
 <pre><code>corrplot 0.95 loaded</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>echo <span class="ot">=</span> <span class="cn">FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can add options to executable code like this</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/KABUM/Downloads/ObesityDataSet_raw_and_data_sinthetic.csv"</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(dados)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/KABUM/Downloads/ObesityDataSet_raw_and_data_sinthetic.csv"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(dados)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2111   17</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dados[,<span class="dv">17</span>]<span class="ot">&lt;-</span><span class="fu">as.factor</span>(dados[,<span class="dv">17</span>])</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(dados[,<span class="dv">17</span>])<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Abaixo"</span>, <span class="st">"Normal"</span>, <span class="st">"obesidade"</span>,<span class="st">"obesidade"</span>,<span class="st">"obesidade"</span>,<span class="st">"sobrepeso"</span>,<span class="st">"sobrepeso"</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dados)[<span class="dv">12</span>]<span class="ot">&lt;-</span> <span class="st">"familia"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(dados,  <span class="at">stats =</span> <span class="fu">c</span>(<span class="st">"min"</span>, <span class="st">"q1"</span>, <span class="st">"med"</span>, <span class="st">"mean"</span>, <span class="st">"q3"</span>, <span class="st">"max"</span>, <span class="st">"sd"</span>, <span class="st">"cv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dados[,<span class="dv">17</span>]<span class="ot">&lt;-</span><span class="fu">as.factor</span>(dados[,<span class="dv">17</span>])</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(dados[,<span class="dv">17</span>])<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Abaixo"</span>, <span class="st">"Normal"</span>, <span class="st">"obesidade"</span>,<span class="st">"obesidade"</span>,<span class="st">"obesidade"</span>,<span class="st">"sobrepeso"</span>,<span class="st">"sobrepeso"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dados)[<span class="dv">12</span>]<span class="ot">&lt;-</span> <span class="st">"familia"</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(dados,  <span class="at">stats =</span> <span class="fu">c</span>(<span class="st">"min"</span>, <span class="st">"q1"</span>, <span class="st">"med"</span>, <span class="st">"mean"</span>, <span class="st">"q3"</span>, <span class="st">"max"</span>, <span class="st">"sd"</span>, <span class="st">"cv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Non-numerical variable(s) ignored: Gender, CALC, FAVC, SCC, SMOKE, familia, CAEC, MTRANS, NObeyesdad</code></pre>
 </div>
@@ -193,8 +194,8 @@ N: 2111
 </div>
 <p><code>dados[,col]</code> pega sempre a ref somente da coluna considerando a linha = 0</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>cor.res <span class="ot">&lt;-</span> <span class="fu">cor</span>(dados<span class="sc">$</span>Age, dados<span class="sc">$</span>Height)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>cor.res</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cor.res <span class="ot">&lt;-</span> <span class="fu">cor</span>(dados<span class="sc">$</span>Age, dados<span class="sc">$</span>Height)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>cor.res</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.02595813</code></pre>
 </div>
