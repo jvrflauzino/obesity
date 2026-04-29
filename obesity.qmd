@@ -1,10 +1,7 @@
 ---
-title: "Obesity Study Case"
+title: "Relatorio Estudo de Caso sobre DB Obesidade"
 format: html
-editor: visual
 ---
-
-## Analise Exploratoria de Dados
 
 Relatorio final do estudo sobre o conjunto de dados de obesidade, visando relacionar variavies que relacionam melhor o nivel de obesidade.
 
@@ -13,14 +10,18 @@ Relatorio final do estudo sobre o conjunto de dados de obesidade, visando relaci
 Documento gerado utilizando RMd e Quarto para render em HTML, rodar o codigo apenas com o markdown possibilita mostra o codigo e o output
 
 ```{r}
+#| eval: true
+#| results: false
+#| warning: false
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(summarytools)
 library(corrplot)
+
 ```
 
-You can add options to executable code like this
+## Inicio do tydling dos dados, fazendo uma renomeacao das features categoricas e agrupando os niveis de obesidade distintos em somente obesidade ou sobrepeso
 
 ```{r}
 dados <- read.csv("C:/Users/KABUM/Downloads/ObesityDataSet_raw_and_data_sinthetic.csv")
@@ -38,3 +39,52 @@ descr(dados,  stats = c("min", "q1", "med", "mean", "q3", "max", "sd", "cv"))
 cor.res <- cor(dados$Age, dados$Height)
 cor.res
 ```
+
+## Graficos Iniciais
+
+```{r}
+p1 <- ggplot(dados, aes(fill = Gender, x = NObeyesdad)) +
+  geom_bar(position = "dodge", alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "Taxa de Obesidade ", 
+       subtitle = "Por genero ")
+p1
+
+
+p2 <- ggplot(dados, aes(x = CALC, fill = NObeyesdad)) +
+  geom_bar(position = "dodge", alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "Taxa de Obesidade ", 
+       subtitle = "Por consumo de alcool ")
+p2
+
+p3 <- ggplot(dados, aes(fill = SMOKE, x = NObeyesdad)) +
+  geom_bar(position = "dodge", alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "Taxa de Obesidade ", 
+       subtitle = "Por genero ")
+p3
+
+p4 <- ggplot(dados, aes(fill = SMOKE, x = NObeyesdad)) +
+  geom_bar(position = "dodge", alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "Taxa de Obesidade ", 
+       subtitle = "Por genero ")
+p4
+
+
+p5 <- ggplot(dados, aes(fill = familia, x = NObeyesdad)) +
+  geom_bar(position = "dodge", alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "Taxa de Obesidade ", 
+       subtitle = "Por histórico familiar")
+p5
+
+p6 <- ggplot(dados, aes(fill = FAVC, x = NObeyesdad)) +
+  geom_bar(position = "dodge", alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "Taxa de Obesidade ", 
+       subtitle = "Por Consumo de Comida calórica")
+p6
+```
+
