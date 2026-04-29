@@ -1,0 +1,40 @@
+---
+title: "Obesity Study Case"
+format: html
+editor: visual
+---
+
+## Analise Exploratoria de Dados
+
+Relatorio final do estudo sobre o conjunto de dados de obesidade, visando relacionar variavies que relacionam melhor o nivel de obesidade.
+
+## Quarto
+
+Documento gerado utilizando RMd e Quarto para render em HTML, rodar o codigo apenas com o markdown possibilita mostra o codigo e o output
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(summarytools)
+library(corrplot)
+```
+
+You can add options to executable code like this
+
+```{r}
+dados <- read.csv("C:/Users/KABUM/Downloads/ObesityDataSet_raw_and_data_sinthetic.csv")
+dim(dados)
+dados[,17]<-as.factor(dados[,17])
+levels(dados[,17])<- c("Abaixo", "Normal", "obesidade","obesidade","obesidade","sobrepeso","sobrepeso")
+names(dados)[12]<- "familia"
+
+descr(dados,  stats = c("min", "q1", "med", "mean", "q3", "max", "sd", "cv"))
+```
+
+`dados[,col]` pega sempre a ref somente da coluna considerando a linha = 0
+
+```{r}
+cor.res <- cor(dados$Age, dados$Height)
+cor.res
+```
